@@ -82,8 +82,8 @@ if ( ! class_exists( 'WP_Review_Me' ) ) {
 			$this->cap        = $args['cap'];
 			$this->scope      = $args['scope'];
 
-			// Set the unique identifying key for this instance
-			$this->key     = 'wrm_' . substr( md5( plugin_basename( __FILE__ ) ), 0, 20 );
+			// Set the unique identifying key for this instance + $this->days for MULTIPLE notifications
+			$this->key     = 'wrm_' . substr( md5( plugin_basename( __FILE__ ) + $this->days ), 0, 20 );
 			$this->link_id = 'wrm-review-link-' . $this->key;
 
 			// Instantiate
